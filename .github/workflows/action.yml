@@ -1,0 +1,14 @@
+name: GitHub Actions
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  builds:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: BUILD docker files
+        run: docker build -t demo .
