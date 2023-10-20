@@ -1,4 +1,9 @@
-name: Docker Image CI
+name: Build and Push Docker Image
+description: Build and push Docker images with Buildx
+author: Tegisty
+branding:
+  icon: 'anchor'
+  color: 'blue'
 
 on:
   push:
@@ -26,8 +31,8 @@ jobs:
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
       - name: BUILD the Docker Image
-        run: docker build -t tegisty13/github_docker_image:${{ github.sha }}
+        run: docker build -t tegisty13/github_docker_image:d2b_dockerImage
         #run: docker build --file Dockerfile --tag tegisty13/github_docker_image:${{ github.sha }}
       
       - name: Docker Push
-        run: docker push tegisty13/github_docker_image:${{ github.sha }}
+        run: docker push tegisty13/github_docker_image:d2b_dockerImage
