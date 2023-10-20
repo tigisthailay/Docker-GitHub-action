@@ -1,9 +1,9 @@
 name: Build and Push Docker Image
-description: Build and push Docker images with Buildx
-author: Tegisty
-branding:
-  icon: 'anchor'
-  color: 'blue'
+# description: Build and push Docker images
+# author: Tegisty
+# branding:
+#   icon: 'anchor'
+#   color: 'blue'
 
 on:
   push:
