@@ -1,0 +1,14 @@
+### docker github action
+
+Task 1:
+========
+Create a CI/CD for building a docker image and push that docker image to docker
+repository (hub.docker.com).
+Credentials should be stored using secrets in Github actions.
+
+Tasks 2:
+========
+Create a CI/Cd for provisioning infrastructure using a Infrastructure as Code Tool which
+is terraform. The CI/CD should store its TF state file to a remote storage which can be S3
+bucket.
+And then perform terraform plan and apply with help of Github action.
