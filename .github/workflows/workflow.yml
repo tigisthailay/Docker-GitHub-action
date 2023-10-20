@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-run: docker build -t demo .
+
 jobs:
 
   builds:
