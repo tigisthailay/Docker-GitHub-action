@@ -23,57 +23,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: tegisty13/d2bwebapp:latest, tegisty13/d2bwebapp:${{ github.run_number }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/d2bwebapp:latest, ${{ secrets.DOCKER_USERNAME }}/d2bwebapp:${{ github.run_number }}
 
 
 
-
-# name: Docker Image CI
-
-# on:
-#   push:
-#     branches: [ main ]
-#   pull_request:
-#     branches: [ main ]
-
-# jobs:
-
-#   build:
-
-#     runs-on: ubuntu-latest
-
-#     steps:
-#     - uses: actions/checkout@v2
-#     - name: Build the Docker image
-#       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-
-
-# name: Docker Image CI
-
-# on:
-#   push:
-#     branches:
-#       - main
-
-# jobs:
-
-#   builds:
-
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       - uses: actions/checkout@v2
-#       - name: BUILD docker files
-
-#         env:
-#           DOCKER_USER: ${{secrets.DOCKER_USERNAME}}
-#           DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-        
-#         run: |
-#           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-
-#       - name: BUILD the Docker Image
-#         run: docker build -- file Dockerfile --tag $DOCKER_USER/github_docker_image:${{ github.sha }}
-      
-#       - name: Docker Push
-#         run: docker push $DOCKER_USER/github_docker_image:${{ github.sha }}
